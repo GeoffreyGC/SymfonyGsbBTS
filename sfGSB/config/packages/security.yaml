@@ -1,0 +1,49 @@
+security:
+    # https://symfony.com/doc/current/security/experimental_authenticators.html
+    enable_authenticator_manager: true
+    # https://symfony.com/doc/current/security.html#c-hashing-passwords
+    password_hashers:
+        Symfony\Component\Security\Core\User\PasswordAuthenticatedUserInterface: 'auto'
+    # https://symfony.com/doc/current/security.html#where-do-users-come-from-user-providers
+    role_hierarchy:
+        ROLE_USER1: [ ROLE_USER ]
+        ROLE_USER2: [ ROLE_USER ]
+        ROLE_USER3: [ ROLE_USER ]
+
+    providers:
+        users_in_memory:
+             memory:
+              users:
+               user1: { password: $2y$13$v2GwCZYDd51BNGLHEb0tjec1YUi2RrzSczb/oR/ZWPfELHapcvg1., roles: ['ROLE_USER1'] }
+               user2: { password: $2y$13$M13.I1FcVJ1k3J9UiNqVhe34s.b5JoFfLm2scP2dVC0Jsb1Bh9v5S, roles: ['ROLE_USER2'] }
+               user3: { password: $2y$13$D2ablreYbdNGCepEVZyrdOFKWunMNXLVxXJC/MPlyxc4KxtEIeGhO, roles: ['ROLE_USER3'] }
+               
+    firewalls:
+        dev:
+            pattern: ^/(_(profiler|wdt)|css|images|js)/
+            security: false
+        main:
+            lazy: true
+            
+            provider: users_in_memory
+            http_basic: 
+                
+
+            # activate different ways to authenticate
+            # https://symfony.com/doc/current/security.html#firewalls-authentication
+
+            # https://symfony.com/doc/current/security/impersonating_user.html
+            # switch_user: true
+
+    # Easy way to control access for large sections of your site
+    # Note: Only the *first* access control that matches will be used
+    access_control:
+         # - { path: ^/* , roles: ROLE_USER3 }
+         # - { path: ^/base , roles:  ['ROLE_USER1','ROLE_USER2']  }
+         # - { path: ^/GSB , roles: ROLE_USER1 }
+         # - { path: ^/Gestion , roles: ROLE_USER1 }
+         # - { path: ^/Equipement , roles: ROLE_USER1 }
+         # - { path: ^/Repart , roles: ROLE_USER2 }
+         # - { path: ^/Segm , roles: ROLE_USER2 }
+        
+        # - { path: ^/profile, roles: ROLE_USER }

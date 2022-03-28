@@ -1,0 +1,169 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="UTF-8">
+        <title>{% block title %}{% endblock %}</title>
+        {% block stylesheets %}
+        <link rel="stylesheet" href="{{asset('css/presentation.css')}}">  
+        <link rel="stylesheet" href="{{asset('bootstrap/bootstrap.min.css')}}">
+        <link rel="stylesheet" href="{{asset('css/styles.css')}}"/>
+        <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
+        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p" crossorigin="anonymous"></script>
+        
+        <link rel="icon" type="image/x-icon" href="images/LOGO-GSB.png" />
+
+        {% endblock %}
+
+        {% block javascripts %}
+            {#{{ encore_entry_script_tags('app') }}#}
+        {% endblock %}
+    </head>
+    <body>
+         
+        
+            
+        {% block navbar %}
+        <nav class="navbar navbar-expand-lg navbar-light fixed-top py-3">
+            <div class="container-fluid"> 
+            <a href="#" class="navbar-brand">
+                <img src="images/LOGO-GSB.png" height="28" alt="CoolBrand">
+            </a>
+            <button type="button" class="navbar-toggler" data-bs-toggle="collapse" data-bs-target="#navbarCollapse" aria-expanded="false" aria-controls="navbarCollapse">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarCollapse">
+                <div class="navbar-nav">
+                    <a class="nav-item nav-link text-white" href='/base'>Home</a>
+                    <div class="dropdown">
+                        <button onclick="myFunction()" class="dropbtn">SI</button>
+                        <div id="myDropdown" class="dropdown-content dropdown-menu-dark">
+                          <a class="dropdown-item" href="/GSB">GSB</a>
+                          <a class="dropdown-item" href="/Gestion">Gestion</a>
+                          <a class="dropdown-item" href="/Equipement">Équipement</a>
+                        </div>
+                    </div>
+                    <div class="dropdown">
+                        <button onclick="myFunction2()" class="dropbtn">Réseau</button>
+                        <div id="myDropdown2" class="dropdown-content dropdown-menu-dark">
+                          <a class="dropdown-item" href="/Repart">Répartition</a>
+                          <a class="dropdown-item" href="/Segm">Segmentation</a>
+                        </div>
+                    </div>
+                    <div class="dropdown">
+                        <button onclick="myFunction3()" class="dropbtn">Utilisateur</button>
+                        <div id="myDropdown3" class="dropdown-content dropdown-menu-dark">
+                          <a class="dropdown-item" href='/lesUtilisateurs'>Les utilisateurs</a>
+                          <a class="dropdown-item" href='/carducien'>Liste des carduciens</a>
+                          <a class="dropdown-item" href='/frais'>Ayant des frais</a>
+                          <a class="dropdown-item" href='/Nfrais'>N'ayant pas de frais</a>
+                          <a class="dropdown-item" href='/Nbfrais'>Nombre de frais</a>
+                        </div>
+                    </div>
+                    <a class="nav-item nav-link text-white" href='/domaine'>Domaines</a>
+                    <a class="nav-item nav-link text-white" href='/secondaire'>Utilisateur Secondaire</a>
+                </div>
+            </div>
+            </div>
+        </nav>       
+        {% endblock %}
+        
+        <div class="container-fluid">
+            
+            
+        {% block header %}     
+        <header class="masthead">
+            <div class="container px-4 px-lg-5 h-100">
+                <div class="row gx-4 gx-lg-5 h-100 align-items-center justify-content-center text-center">
+                    <div class="col-lg-8 align-self-end">
+                        <h1 class="text-white font-weight-bold">Bienvenue sur le site de l'entreprise GSB</h1>
+                        <hr />
+                    </div>
+                    <div class="col-lg-8 align-self-baseline">
+                        <p class="text-white-75 mb-5">Vous y trouverez tous les details de la partie SI et Réseau sur notre entreprise !</p>
+                    </div>
+                </div>
+            </div>
+        </header>        
+        {% endblock %}
+        
+        {% block section %}{% endblock %}
+        
+        </div>
+        
+        
+        
+
+        
+        <script>
+            function myFunction() {
+                document.getElementById("myDropdown").classList.toggle("show");
+            }
+
+            // Close the dropdown menu if the user clicks outside of it
+            window.onclick = function(event) {
+              if (!event.target.matches('.dropbtn')) {
+
+                var dropdowns = document.getElementsByClassName("dropdown-content");
+                var i;
+                for (i = 0; i < dropdowns.length; i++) {
+                  var openDropdown = dropdowns[i];
+                  if (openDropdown.classList.contains('show')) {
+                    openDropdown.classList.remove('show');
+                  }
+                }
+              }
+            }
+        </script>
+        
+        <script>
+            function myFunction2() {
+                document.getElementById("myDropdown2").classList.toggle("show");
+            }
+
+            // Close the dropdown menu if the user clicks outside of it
+            window.onclick = function (event) {
+              if (!event.target.matches('.dropbtn')) {
+
+                var dropdowns = document.getElementsByClassName("dropdown-content");
+                var i;
+                for (i = 0; i < dropdowns.length; i++) {
+                  var openDropdown = dropdowns[i];
+                  if (openDropdown.classList.contains('show')) {
+                    openDropdown.classList.remove('show');
+                  }
+                }
+              }
+            }
+        </script>
+        
+        <script>
+            function myFunction3() {
+                document.getElementById("myDropdown3").classList.toggle("show");
+            }
+
+            // Close the dropdown menu if the user clicks outside of it
+            window.onclick = function (event) {
+              if (!event.target.matches('.dropbtn')) {
+
+                var dropdowns = document.getElementsByClassName("dropdown-content");
+                var i;
+                for (i = 0; i < dropdowns.length; i++) {
+                  var openDropdown = dropdowns[i];
+                  if (openDropdown.classList.contains('show')) {
+                    openDropdown.classList.remove('show');
+                  }
+                }
+              }
+            }
+        </script>
+                <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"
+    integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj"
+    crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.5.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-
+    ho+j7jyWK8fNQe+A12Hb8AhRq26LrZ/JpcUGGOn+Y7RsweNrtN/tE3MoK7ZeZDyx"
+    crossorigin="anonymous"></script>
+ 
+    
+      
+    </body>
+</html>

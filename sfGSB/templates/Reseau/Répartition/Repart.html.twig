@@ -1,0 +1,63 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}GSB{% endblock %}
+
+{% block header %}
+    <header class="masthead">
+        <div class="container px-4 px-lg-5 h-100">
+            <div class="row gx-4 gx-lg-5 h-100 align-items-center justify-content-center text-center">
+                <div class="col-lg-8 align-self-end">
+                    <h1 class="text-white font-weight-bold">Répartition</h1>
+                    <hr />
+                </div>
+                <div class="col-lg-8 align-self-baseline">
+                    <p class="text-white-75 mb-5">Vous y trouverez ci-dessous toutes les informations à propos de la répartion de l'entreprise GSB</p>
+                </div>
+            </div>
+        </div>
+    </header>
+{% endblock %}
+{% block section %}
+    <section class="page-section" id="services">
+        <div class="container px-4 px-lg-5">
+            <h2 class="text-center mt-0">Répartition des services</h2>
+            <hr class="divider" />
+            <div class="row gx-4 gx-lg-5">
+                <div class="page-content container">
+	<div class="row">
+            
+            <div class="col-1"></div>
+            
+		<div class="col-12 text-left">
+   
+                    <div class="block" style="background-color: #AAA">
+                        <div class="container my-5 d-grid gap-5 ">
+                        <div class="p-5">
+                                            <p class='text-dark response'>
+                                                Chaque étage dispose d'une baie de brassage qui le relie par une fibre à la
+                                                baie centrale de la salle serveurs. <br>
+                                                Toutes les salles de réunion sont équipées d'un point d'accès Wifipositionné 
+                                                par défaut dans le VLAN "Visiteurs" qui autorise uniquement un
+                                                accès Internet. <br>
+                                                Les portables connectés en wifi à ce point d'accès reçoivent ainsi une
+                                                adresse IP et n'ont, par conséquent accès qu'aux services DHCP et DNS.<br>
+                                                Le point d’accès peut être configuré à la demande pour être raccordé à un
+                                                VLAN présent au niveau de l'étage.<br>
+                                                Chaque salle de réunion dispose d'un vidéoprojecteur, d'enceintes et d'un
+                                                tableau numérique interactif. <br>
+                                                La salle "Démonstration" est destinée à l'accueil des organismes de santé
+                                                (AFSSAPS notamment) et des partenaires scientifiques. <br>
+                                                Elle dispose de paillasses et d'équipements de laboratoire, en plus d'une 
+                                                salle de réunion.
+                                            </p>
+                                        </div>
+                                </div>
+                        </div>   
+                    </div>
+                </div>
+            </div>
+        </div>
+        </div>
+    </section>
+{% endblock %}
+    

@@ -1,0 +1,46 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Enregistrer un Etat{% endblock %}
+
+{% block header %}
+    <header class="masthead">
+        <div class="container px-4 px-lg-5 h-100">
+            <div class="row gx-4 gx-lg-5 h-100 align-items-center justify-content-center text-center">
+                <div class="col-lg-8 align-self-end">
+                    <h1 class="text-white font-weight-bold">Nouveaux Etat</h1>
+                    <hr />
+                </div>
+                <div class="col-lg-8 align-self-baseline">
+                    <p class="text-white-75 mb-5">Enregistrer un etat</p>
+                </div>
+            </div>
+        </div>
+    </header>
+{% endblock %}
+
+{% block section %}
+    <section class="page-section" id="services">
+        <div class="container px-4 px-lg-5">
+            <h2 class="text-center mt-0">Ajouter un état</h2>
+            <hr class="divider" />
+            <div class="row gx-4 gx-lg-5">
+                <div class="page-content container">
+                    <div class="row">
+                    <div class="col-1"></div>
+                        <div class="col-12 text-left">
+                            <div class="block" style="background-color: #AAA">
+                                <div class="container my-5 d-grid gap-5 ">
+                                    <div class="p-5 text-center" style="text-align: left;">
+                                        {{ include('etat/_form.html.twig') }}
+                                        <a href="{{ path('etat_index') }}">Retour sur la liste</a>
+                                    </div>
+                                </div>
+                            </div>   
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <h1></h1>  
+{% endblock %}

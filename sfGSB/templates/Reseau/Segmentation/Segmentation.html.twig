@@ -1,0 +1,53 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}GSB{% endblock %}
+
+{% block header %}
+    <header class="masthead">
+        <div class="container px-4 px-lg-5 h-100">
+            <div class="row gx-4 gx-lg-5 h-100 align-items-center justify-content-center text-center">
+                <div class="col-lg-8 align-self-end">
+                    <h1 class="text-white font-weight-bold">Segmentation</h1>
+                    <hr />
+                </div>
+                <div class="col-lg-8 align-self-baseline">
+                    <p class="text-white-75 mb-5">Vous y trouverez ci-dessous toutes les informations à propos de la segmentation de l'entreprise GSB</p>
+                </div>
+            </div>
+        </div>
+    </header>
+{% endblock %}
+{% block section %}
+    <section class="page-section" id="services">
+        <div class="container px-4 px-lg-5">
+            <h2 class="text-center mt-0">La segmentation</h2>
+            <hr class="divider" />
+            <div class="row gx-4 gx-lg-5">
+                <div class="page-content container">
+                    <div class="row">
+                    <div class="col-1"></div>
+                        <div class="col-12 text-left">
+                            <div class="block" style="background-color: #AAA">
+                                <div class="container my-5 d-grid gap-5 ">
+                                    <div class="p-5">
+                                        <p class='text-dark response'>
+                                            L'organisation des VLAN et de l'adressage IP est la suivante : 
+                                        </p><br>
+                                        <center><img src="images/segmentation.png" height="425" alt="CoolBrand"></center><br>
+                                        <p class='text-dark' style='font-size: 25px'>
+                                            Les règles actuelles concernant les vlans sont les suivantes :<br>
+                                        </p>
+                                        <li style='font-size: 20px'> chaque vlan (sauf le vlan visiteur) peut uniquement accéder (quel que soit le protocole) aux 
+                                            vlans "Serveurs" et "Sortie"</li>
+                                        <li style='font-size: 20px'> le vlan "Visiteurs" peut uniquement interroger les serveur DNS et DHCP et sortir sur internet</li>
+                                   
+                                    </div>
+                                </div>
+                            </div>   
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+{% endblock %}

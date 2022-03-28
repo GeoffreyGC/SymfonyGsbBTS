@@ -1,0 +1,78 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}GSB{% endblock %}
+
+{% block header %}
+    <header class="masthead">
+        <div class="container px-4 px-lg-5 h-100">
+            <div class="row gx-4 gx-lg-5 h-100 align-items-center justify-content-center text-center">
+                <div class="col-lg-8 align-self-end">
+                    <h1 class="text-white font-weight-bold">les Carduciens</h1>
+                    <hr />
+                </div>
+                {% if lesCarduciens is empty %}
+                <div class="col-lg-8 align-self-baseline">
+                    <p class="text-white-75 mb-5">Aucun carduciens n'est enregistré sur le site</p>
+                </div>
+                {% else %}
+                <div class="col-lg-8 align-self-baseline">
+                    <p class="text-white-75 mb-5">Liste des carduciens qui sont enregistré sur le site</p>
+                </div>
+                {% endif %}
+            </div>
+        </div>
+    </header>
+{% endblock %}
+{% block section %}
+    {% if lesCarduciens is empty %}
+        
+    {% else %}    
+    <section class="page-section" id="services">
+        <div class="container px-4 px-lg-5">
+            <h2 class="text-center mt-0">Les Carduciens</h2>
+            <hr class="divider" />
+            <div class="row gx-4 gx-lg-5">
+                <div class="page-content container">
+                    <div class="row">
+                    <div class="col-1"></div>
+                        <div class="col-12 text-left">
+                            <div class="block" style="background-color: #AAA">
+                                <div class="container my-5 d-grid gap-5 ">
+                                    <div class="p-5">
+                                        <table class="table text-dark">
+                                            <thead>
+                                              <tr>
+
+                                                <th scope="col">Nom</th>
+                                                <th scope="col">Prenom</th>
+                                                <th scope="col">Adresse</th>
+                                                <th scope="col">Code Postal</th>
+                                                <th scope="col">Ville</th>
+                                                <th scope="col">Date Embauche</th>
+                                              </tr>
+                                            </thead>
+                                            <tbody>
+                                                {% for user in lesCarduciens %}
+                                              <tr>
+
+                                                <td>{{ user.nom }}</td>
+                                                <td>{{ user.prenom }}</td>
+                                                <td>{{ user.adresse }}</td>
+                                                <td>{{ user.cp }}</td>
+                                                <td>{{ user.ville }}</td>
+                                                <td>{{ user.dateembauche.format("d/m/Y")}}</td>
+                                              </tr>
+                                                {% endfor %}
+                                            </tbody>
+                                        </table>
+                                    </div>
+                                </div>
+                            </div>   
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    {% endif %}
+{% endblock %}
